@@ -9,6 +9,11 @@
 ## Setup
 
 ### Prerequisites
+
+- Python 3.8 or higher
+- Virtual environment (optional but recommended)
+
+### Installation
 1. **Clone the repository:**
   
     ```bash
@@ -26,7 +31,14 @@
 3. **Install the dependencies:**
 
     ```bash
+    python.exe -m pip install --upgrade pip
+
     pip install -r requirements.txt
+    ```
+    
+4. **Fill .env file:**
+    ```bash
+    AI21_API_KEY = "Your_API_Key"
     ```
 
 ### Running the Application
