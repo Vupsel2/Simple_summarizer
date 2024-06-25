@@ -18,11 +18,11 @@ template = """Summarize the following text:
 """
 
 prompt = PromptTemplate(input_variables=["text"], template=template)
-
 llm = AI21(ai21_api_key=os.getenv("API_KEY"))
-
 summarization_chain = prompt| llm
 
+
+#setup endpoint
 @app.post("/summarize")
 async def summarize_text(request: TextRequest):
     try:
@@ -32,6 +32,5 @@ async def summarize_text(request: TextRequest):
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
-# Запуск приложения
 if __name__ == "__main__":
     uvicorn.run(app, host="127.0.0.1", port=8000)
